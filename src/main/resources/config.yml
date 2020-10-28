@@ -1,0 +1,9 @@
+features:
+  eventActions: true
+  spawn: true
+
+messages:
+  spawnSet: '&aThe spawn location has been set.'
+  featureDisabled: '&cThis feature is disabled.'
+  reloadedConfig: '&aThe plugin has been reloaded.'
+  teleportedToSpawn: '&aTeleported to the spawn.'

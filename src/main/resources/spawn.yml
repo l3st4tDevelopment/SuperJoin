@@ -1,0 +1,6 @@
+## How should players be teleported to spawn on join?
+## Available options:
+## NEVER: Players can only teleport to spawn using /spawn.
+## FIRST_JOIN: Players will only be teleported to spawn on their first join.
+## ALWAYS: Players will always be teleported to spawn.
+joinTeleportMode: FIRST_JOIN

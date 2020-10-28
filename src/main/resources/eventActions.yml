@@ -1,0 +1,19 @@
+## This is the event actions configuration file.
+## A list of available actions can be found here:
+## https://github.com/l3st4tPlugins/ActionAPI
+
+groups:
+  ## This can be anything, as long as it is unique.
+  ## The permission for this would be: superjoin.groups.default
+  default:
+    ## Specify the priority here. Lower number = higher priority.
+    priority: 0
+    ## You can specify join actions here.
+    joinActions:
+      - '[Broadcast] <green>%player <yellow>has joined the server!'
+      - '[Sound] BLOCK_BELL_USE'
+    ## You can specify quit actions here.
+    ## Some actions are kind of useless since the player is leaving.
+    quitActions:
+      - '[Broadcast] <green>%player <red>has left the server!'
+      - '[Sound] ENTITY_VILLAGER_NO'

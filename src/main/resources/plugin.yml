@@ -1,0 +1,5 @@
+name: ${project.name}
+author: l3st4t
+main: com.l3tplay.superjoin.SuperJoin
+version: ${project.version}
+api-version: 1.16
