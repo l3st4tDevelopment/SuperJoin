@@ -2,6 +2,13 @@
 ## A list of available actions can be found here:
 ## https://github.com/l3st4tPlugins/ActionAPI
 
+## These are global actions that will be executed no matter what.
+global:
+  joinActions:
+    - '[Message] <green>Welcome to my server!'
+  quitActions:
+    - '[Broadcast] <red>%player left us. Big sad.'
+
 groups:
   ## This can be anything, as long as it is unique.
   ## The permission for this would be: superjoin.groups.default

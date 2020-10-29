@@ -2,19 +2,18 @@ package com.l3tplay.superjoin.eventaction;
 
 import com.l3tplay.superjoin.SuperJoin;
 import com.l3tplay.superjoin.eventaction.EventAction;
+import lombok.Getter;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
 import java.io.File;
-import java.util.List;
-import java.util.Optional;
-import java.util.SortedMap;
-import java.util.TreeMap;
+import java.util.*;
 
 public class EventActionManager {
 
     private final FileConfiguration config;
+    @Getter private final EventAction globalActions;
     private final SortedMap<Integer, EventAction> actionMap = new TreeMap<>();
 
     public EventActionManager(SuperJoin plugin) {
@@ -23,6 +22,7 @@ public class EventActionManager {
             plugin.saveResource("eventActions.yml", false);
         }
         this.config = YamlConfiguration.loadConfiguration(file);
+        this.globalActions = new EventAction(config.getStringList("global.joinActions"), config.getStringList("global.quitActions"), null);
 
         loadActions();
     }

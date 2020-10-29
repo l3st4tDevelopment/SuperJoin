@@ -22,6 +22,7 @@ public class EventActionListener implements Listener {
         }
 
         event.setJoinMessage(null);
+        plugin.getActionManager().executeActions(player, plugin.getEventActionManager().getGlobalActions().getJoinActions());
         plugin.getEventActionManager().getActions(player)
                 .ifPresent(action -> plugin.getActionManager().executeActions(player, action.getJoinActions()));
     }
@@ -35,6 +36,7 @@ public class EventActionListener implements Listener {
         }
 
         event.setQuitMessage(null);
+        plugin.getActionManager().executeActions(player, plugin.getEventActionManager().getGlobalActions().getQuitActions());
         plugin.getEventActionManager().getActions(player)
                 .ifPresent(action -> plugin.getActionManager().executeActions(player, action.getQuitActions()));
     }
