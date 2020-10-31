@@ -22,6 +22,11 @@ public class EventActionListener implements Listener {
         }
 
         event.setJoinMessage(null);
+
+        if (!player.hasPlayedBefore()) {
+            plugin.getActionManager().executeActions(player, plugin.getEventActionManager().getFirstJoinActions());
+        }
+
         plugin.getActionManager().executeActions(player, plugin.getEventActionManager().getGlobalActions().getJoinActions());
         plugin.getEventActionManager().getActions(player)
                 .ifPresent(action -> plugin.getActionManager().executeActions(player, action.getJoinActions()));

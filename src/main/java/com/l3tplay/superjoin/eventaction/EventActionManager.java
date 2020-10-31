@@ -15,6 +15,7 @@ public class EventActionManager {
     private final FileConfiguration config;
     @Getter private final EventAction globalActions;
     private final SortedMap<Integer, EventAction> actionMap = new TreeMap<>();
+    @Getter private final List<String> firstJoinActions;
 
     public EventActionManager(SuperJoin plugin) {
         File file = new File(plugin.getDataFolder(), "eventActions.yml");
@@ -23,6 +24,7 @@ public class EventActionManager {
         }
         this.config = YamlConfiguration.loadConfiguration(file);
         this.globalActions = new EventAction(config.getStringList("global.joinActions"), config.getStringList("global.quitActions"), null);
+        this.firstJoinActions = config.getStringList("firstJoinActions");
 
         loadActions();
     }

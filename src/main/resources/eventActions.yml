@@ -9,6 +9,14 @@ global:
   quitActions:
     - '[Broadcast] <red>%player left us. Big sad.'
 
+
+## These actions will be executed on join for new players.
+firstJoinActions:
+  - '[Broadcast] <green>%player has joined for the first time!'
+
+## These actions rely on permissions. If a player doesn't have permission
+## for any group, only the global actions will be executed, along with first
+## join actions if applicable.
 groups:
   ## This can be anything, as long as it is unique.
   ## The permission for this would be: superjoin.groups.default
