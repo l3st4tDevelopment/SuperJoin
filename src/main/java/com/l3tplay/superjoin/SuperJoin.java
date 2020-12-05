@@ -33,10 +33,6 @@ public class SuperJoin extends JavaPlugin {
         }
 
         this.actionManager = new ActionManager(this);
-        loadFeatures();
-
-        Bukkit.getPluginManager().registerEvents(new EventActionListener(this), this);
-        Bukkit.getPluginManager().registerEvents(new SpawnListener(this), this);
 
         PaperCommandManager commandManager = new PaperCommandManager(this);
         commandManager.registerCommand(new SuperJoinCommand(this));
@@ -49,6 +45,12 @@ public class SuperJoin extends JavaPlugin {
             e.printStackTrace();
         }
 
+        Bukkit.getScheduler().runTask(this, () -> {
+            loadFeatures();
+
+            Bukkit.getPluginManager().registerEvents(new EventActionListener(this), this);
+            Bukkit.getPluginManager().registerEvents(new SpawnListener(this), this);
+        });
     }
 
     public void loadFeatures() {
